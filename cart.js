@@ -32,14 +32,14 @@ const carsData = [
         id: 5,
         name: 'Audi Q7 Premium',
         price: 79900,
-        image: 'jeep.jpg',
+        image: 'download (3).jpg',
         details: '2023 • 12,000 mi • Gasoline • Gray'
     },
     {
         id: 6,
         name: 'Lamborghini Huracán',
         price: 289000,
-        image: 'huma.jpg',
+        image: 'download (4).jpg',
         details: '2022 • 1,800 mi • Gasoline • Yellow'
     }
 ];
@@ -154,11 +154,8 @@ document.getElementById('checkoutBtn').addEventListener('click', () => {
     if (cart.length === 0) {
         alert('Your cart is empty!');
     } else {
-        alert('Thank you for your order! Proceeding to payment...');
-        // Clear cart after checkout
-        cart = [];
-        saveCart();
-        renderCart();
+        // Redirect to payment page where user can enter payment details
+        window.location.href = 'payment.html';
     }
 });
 

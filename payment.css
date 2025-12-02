@@ -1,0 +1,28 @@
+/* Payment page tweaks */
+.payment-form {
+    background: white;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+}
+.payment-form h2 {
+    margin-bottom: 1rem;
+}
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+.form-grid input {
+    padding: 0.8rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #e6eef7;
+    font: inherit;
+}
+.payment-summary .summary-row { margin-bottom: 0.75rem; }
+.payment-form button { width: 100%; padding: 0.9rem; }
+
+@media (max-width: 992px) {
+    .form-grid { grid-template-columns: 1fr; }
+}
