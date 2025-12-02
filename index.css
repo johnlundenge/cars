@@ -137,6 +137,15 @@ p { margin-bottom: 1rem; }
 .nav-links a.active {
     color: #e63946;
 }
+.cart-badge {
+    background: #e63946;
+    color: white;
+    border-radius: 50%;
+    padding: 0.1rem 0.4rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    margin-left: 0.3rem;
+}
 .menu-toggle {
     display: none;
     font-size: 1.4rem;
@@ -168,7 +177,7 @@ p { margin-bottom: 1rem; }
    Hero
    ============================== */
 .hero {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('range.jpg') center/cover no-repeat;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('images.jpg') center/cover no-repeat;
     color: white;
     text-align: center;
     padding: 8rem 0;

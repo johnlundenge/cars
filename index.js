@@ -52,4 +52,39 @@
         searchInput.addEventListener('input', filterCars);
         typeFilter.addEventListener('change', filterCars);
         priceFilter.addEventListener('change', filterCars);
-    
+
+        // Cart Functionality
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        function updateCartBadge() {
+            const cartCount = cart.reduce((sum, item) => sum + item.quantity, 0);
+            const badge = document.getElementById('cartCount');
+            if (cartCount > 0) {
+                badge.textContent = cartCount;
+                badge.style.display = 'inline';
+            } else {
+                badge.style.display = 'none';
+            }
+        }
+
+        function addToCart(carId) {
+            const existingItem = cart.find(item => item.id === carId);
+            if (existingItem) {
+                existingItem.quantity++;
+            } else {
+                cart.push({ id: carId, quantity: 1 });
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            updateCartBadge();
+            alert('Car added to cart!');
+        }
+
+        document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const carId = parseInt(btn.dataset.id);
+                addToCart(carId);
+            });
+        });
+
+        // Initial cart badge update
+        updateCartBadge();
