@@ -1,0 +1,360 @@
+
+/* ==============================
+   Reset & Base
+   ============================== */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #fff;
+}
+
+/* ==============================
+   Layout
+   ============================== */
+.container {
+    width: min(90%, 1200px);
+    margin: 0 auto;
+}
+
+.section {
+    padding: 4rem 0;
+}
+
+.bg-light {
+    background: #f8fafc;
+}
+
+/* ==============================
+   Typography
+   ============================== */
+h1, h2, h3 {
+    font-weight: 700;
+}
+
+h1 { font-size: clamp(2.5rem, 6vw, 3.8rem); }
+h2 { font-size: 2.4rem; margin-bottom: 2rem; text-align: center; }
+h3 { font-size: 1.4rem; margin-bottom: .5rem; }
+
+p { margin-bottom: 1rem; }
+
+.highlight { color: #e63946; }
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.section-title::after {
+    content: '';
+    width: 60px;
+    height: 4px;
+    background: #e63946;
+    display: block;
+    margin: 0.5rem auto;
+    border-radius: 2px;
+}
+
+/* Buttons */
+.btn-primary {
+    background: #e63946;
+    color: white;
+    padding: 0.9rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.btn-primary:hover {
+    background: #d62828;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(230, 57, 70, 0.3);
+}
+
+.btn-secondary {
+    background: #1d3557;
+    color: white;
+    padding: 0.7rem 1.5rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 1rem;
+    transition: 0.3s;
+}
+.btn-secondary:hover {
+    background: #14213d;
+}
+
+/* ==============================
+   Header
+   ============================== */
+.header {
+    background: #fff;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+.logo h1 {
+    color: #e63946;
+    font-size: 1.8rem;
+}
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+.nav-links a:hover,
+.nav-links a.active {
+    color: #e63946;
+}
+.menu-toggle {
+    display: none;
+    font-size: 1.4rem;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Mobile Menu */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        transform: translateY(-150%);
+        transition: transform 0.3s ease;
+    }
+    .nav-links.open {
+        transform: translateY(0);
+    }
+    .menu-toggle { display: block; }
+}
+
+/* ==============================
+   Hero
+   ============================== */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('range.jpg') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: 8rem 0;
+}
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.hero p {
+    font-size: 1.2rem;
+    margin: 1.5rem 0;
+}
+
+/* ==============================
+   Filter Bar
+   ============================== */
+.filter-section {
+    background: #f1f5f9;
+    padding: 2rem 0;
+}
+.filter-bar {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr auto;
+    gap: 1rem;
+    align-items: center;
+}
+.filter-bar input,
+.filter-bar select {
+    padding: 0.8rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font: inherit;
+}
+.btn-search {
+    background: #1d3557;
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+}
+.btn-search:hover {
+    background: #14213d;
+}
+
+/* ==============================
+   Cars Grid
+   ============================== */
+.cars-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+.car-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.car-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+.car-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+.car-info {
+    padding: 1.5rem;
+}
+.price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #e63946;
+    margin: 0.5rem 0;
+}
+.details {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 0.75rem;
+}
+.car-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+}
+.tag {
+    background: #e0e7ff;
+    color: #4338ca;
+    padding: 0.25rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+}
+
+/* ==============================
+   About & Contact
+   ============================== */
+.about-grid,
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+.about-grid img,
+.contact-grid img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+.features {
+    list-style: none;
+    margin-top: 1.5rem;
+}
+.features li {
+    padding: 0.5rem 0;
+    font-weight: 500;
+}
+.features li::before {
+    content: 'Check';
+    color: #10b981;
+    font-weight: bold;
+    margin-right: 0.5rem;
+}
+
+.contact-form {
+    display: grid;
+    gap: 1rem;
+}
+.contact-form input,
+.contact-form textarea {
+    padding: 0.9rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font: inherit;
+}
+.contact-form button {
+    justify-self: start;
+}
+
+/* ==============================
+   Footer
+   ============================== */
+.footer {
+    background: #1f2937;
+    color: #9ca3af;
+    text-align: center;
+    padding: 2rem 0;
+    font-size: 0.9rem;
+}
+.footer a {
+    color: #e63946;
+    text-decoration: none;
+}
+.footer a:hover {
+    text-decoration: underline;
+}
+
+/* ==============================
+   Responsive
+   ============================== */
+@media (max-width: 992px) {
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .filter-bar {
+        grid-template-columns: 1fr;
+    }
+    .btn-search {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero {
+        padding: 5rem 0;
+    }
+    .cars-grid {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,211 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxeAuto - Premium Cars for Sale</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container nav">
+            <div class="logo">
+                <h1>LuxeAuto</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#inventory">Inventory</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="menu-toggle">Menu</div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h1>Find Your <span class="highlight">Dream Car</span></h1>
+            <p>Premium selection of new and certified pre-owned vehicles.</p>
+            <a href="#inventory" class="btn-primary">Browse Inventory</a>
+        </div>
+    </section>
+
+    <!-- Search & Filter -->
+    <section class="filter-section">
+        <div class="container">
+            <div class="filter-bar">
+                <input type="text" id="searchInput" placeholder="Search by make, model...">
+                <select id="typeFilter">
+                    <option value="all">All Types</option>
+                    <option value="sedan">Sedan</option>
+                    <option value="suv">SUV</option>
+                    <option value="sports">Sports</option>
+                    <option value="electric">Electric</option>
+                </select>
+                <select id="priceFilter">
+                    <option value="all">Any Price</option>
+                    <option value="under50">$0 - $50,000</option>
+                    <option value="50to100">$50,000 - $100,000</option>
+                    <option value="over100">Over $100,000</option>
+                </select>
+                <button class="btn-search">Search</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Inventory -->
+    <section id="inventory" class="section">
+        <div class="container">
+            <h2 class="section-title">Featured Vehicles</h2>
+            <div class="cars-grid" id="carsGrid">
+
+                <!-- Car 1 -->
+                <div class="car-card" data-type="sedan" data-price="under50">
+                    <img src="range.jpg" alt="Tesla Model 3">
+                    <div class="car-info">
+                        <h3>Tesla Model 3</h3>
+                        <p class="price">$42,990</p>
+                        <p class="details">2023 • 15,000 mi • Electric • White</p>
+                        <div class="car-tags">
+                            <span class="tag">EV</span>
+                            <span class="tag">Low Mileage</span>
+                        </div>
+                        <a href="#" class="btn-secondary">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Car 2 -->
+                <div class="car-card" data-type="suv" data-price="50to100">
+                    <img src="bugati.jpg" alt="BMW X5">
+                    <div class="car-info">
+                        <h3>BMW X5 xDrive40i</h3>
+                        <p class="price">$68,500</p>
+                        <p class="details">2024 • 8,200 mi • Hybrid • Black</p>
+                        <div class="car-tags">
+                            <span class="tag">Hybrid</span>
+                            <span class="tag">Luxury</span>
+                        </div>
+                        <a href="#" class="btn-secondary">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Car 3 -->
+                <div class="car-card" data-type="sports" data-price="over100">
+                    <img src="sot.png" alt="Porsche 911">
+                    <div class="car-info">
+                        <h3>Porsche 911 Turbo S</h3>
+                        <p class="price">$215,000</p>
+                        <p class="details">2023 • 3,100 mi • Gasoline • Red</p>
+                        <div class="car-tags">
+                            <span class="tag">Performance</span>
+                            <span class="tag">Limited</span>
+                        </div>
+                        <a href="#" class="btn-secondary">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Car 4 -->
+                <div class="car-card" data-type="electric" data-price="under50">
+                    <img src="probox.jpeg" alt="Nissan Leaf">
+                    <div class="car-info">
+                        <h3>Nissan Leaf SV</h3>
+                        <p class="price">$29,990</p>
+                        <p class="details">2024 • 500 mi • Electric • Blue</p>
+                        <div class="car-tags">
+                            <span class="tag">EV</span>
+                            <span class="tag">New Arrival</span>
+                        </div>
+                        <a href="#" class="btn-secondary">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Car 5 -->
+                <div class="car-card" data-type="suv" data-price="50to100">
+                    <img src="jeep.jpg" alt="Audi Q7">
+                    <div class="car-info">
+                        <h3>Audi Q7 Premium</h3>
+                        <p class="price">$79,900</p>
+                        <p class="details">2023 • 12,000 mi • Gasoline • Gray</p>
+                        <div class="car-tags">
+                            <span class="tag">7 Seats</span>
+                            <span class="tag">AWD</span>
+                        </div>
+                        <a href="#" class="btn-secondary">View Details</a>
+                    </div>
+                </div>
+
+                <!-- Car 6 -->
+                <div class="car-card" data-type="sports" data-price="over100">
+                    <img src="huma.jpg" alt="Lamborghini Huracan">
+                    <div class="car-info">
+                        <h3>Lamborghini Huracán</h3>
+                        <p class="price">$289,000</p>
+                        <p class="details">2022 • 1,800 mi • Gasoline • Yellow</p>
+                        <div class="car-tags">
+                            <span class="tag">Exotic</span>
+                            <span class="tag">Rare</span>
+                        </div>
+                        <a href="#" class="btn-secondary">View Details</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section bg-light">
+        <div class="container about-grid">
+            <div>
+                <h2>Why Choose LuxeAuto?</h2>
+                <p>We hand-pick every vehicle and offer transparent pricing, certified inspections, and a 7-day money-back guarantee.</p>
+                <ul class="features">
+                    <li>Certified Pre-Owned</li>
+                    <li>Financing Available</li>
+                    <li>Nationwide Delivery</li>
+                    <li>Trade-In Welcome</li>
+                </ul>
+            </div>
+            <img src="https://via.placeholder.com/600x400?text=Dealership+Interior" alt="Dealership">
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-grid">
+                <div>
+                    <p><strong>Address:</strong> 123 Auto Boulevard, Miami, FL 33131</p>
+                    <p><strong>Phone:</strong> (555) 123-4567</p>
+                    <p><strong>Email:</strong> sales@luxeauto.com</p>
+                    <p><strong>Hours:</strong> Mon–Sat: 9AM–7PM | Sun: 11AM–5PM</p>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="tel" placeholder="Your Phone">
+                    <textarea placeholder="Message (e.g., interested in Tesla Model 3)" rows="4" required></textarea>
+                    <button type="submit" class="btn-primary">Send Inquiry</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 LuxeAuto. All rights reserved. | <a href="#">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
